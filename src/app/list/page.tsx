@@ -33,6 +33,7 @@ const ListPage = async () => {
                 <tr>
                   <th>Name</th>
                   <th>Quantity</th>
+                  <th>Value</th>
                   <th>Condition</th>
                   <th>Actions</th>
                 </tr>

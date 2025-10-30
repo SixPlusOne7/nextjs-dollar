@@ -29,17 +29,14 @@ model User {
   role     Role   @default(USER)
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
-}
-
 model Stuff {
-  id        Int       @id @default(autoincrement())
+  id        String   @id @default(cuid())
   name      String
   quantity  Int
-  condition Condition @default(good)
+  condition String
+  image     String?
   owner     String
+  value     Float    @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }

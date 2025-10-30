@@ -1,10 +1,15 @@
 import { Stuff } from '@prisma/client';
 
 /* Renders a single row in the List Stuff table. See list/page.tsx. */
-const StuffItemAdmin = ({ name, quantity, condition, owner, id }: Stuff) => (
+const StuffItemAdmin = ({ name, quantity, value, condition, owner, id }: Stuff) => (
   <tr>
     <td>{name}</td>
     <td>{quantity}</td>
+    <td>
+      <span>$</span>
+      {' '}
+      <span>{value.toFixed(2)}</span>
+    </td>
     <td>{condition}</td>
     <td>{owner}</td>
     <td>

@@ -15,7 +15,10 @@ export default async function EditStuffPage({ params }: { params: { id: string |
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-  const id = Number(Array.isArray(params?.id) ? params?.id[0] : params?.id);
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
+  if (!id) {
+    return notFound();
+  }
   // console.log(id);
   const stuff: Stuff | null = await prisma.stuff.findUnique({
     where: { id },
